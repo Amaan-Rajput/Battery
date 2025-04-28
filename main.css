@@ -1,0 +1,175 @@
+:root {
+    --gradient-color-red: linear-gradient(90deg, hsl(7, 89%, 46%)15%, hsl(11, 93%, 68%)100%);
+    --gradient-color-orange: linear-gradient(90deg, hsl(22, 89%, 46%)15%, hsl(54, 90%, 45%)100%);
+    --gradient-color-yellow: linear-gradient(90deg, hsl(54, 89%, 46%)15%, hsl(92, 93%, 45%)100%);
+    --gradient-color-green: linear-gradient(90deg, hsl(92, 89%, 46%)15%, hsl(92, 90%, 68%)100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gradient-red,
+.gradient-red::after {
+    color: #de250d;
+    background: var(--gradient-color-red);
+}
+
+.gradient-orange,
+.gradient-orange::after {
+    color: #de590d;
+    background: var(--gradient-color-orange);
+}
+
+.gradient-yellow,
+.gradient-yellow::after {
+    color: #dec90d;
+    background: var(--gradient-color-yellow);
+}
+
+.gradient-green,
+.gradient-green::after {
+    color: #6ede0d;
+    background: var(--gradient-color-green);
+}
+
+.green {
+    color: #6ede0d;
+}
+
+.Animation-green {
+    color: #6ede0d;
+    animation: Animation 1s ease-in infinite;
+}
+
+.Animation-red {
+    color: #de250d;
+    animation: Animation 1s ease-in infinite;
+}
+
+@keyframes Animation {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 5px);
+    }
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    background: url("./BG.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.batteryCard {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    height: 230px;
+    width: 410px;
+    align-items: center;
+    justify-content: center;
+    background-color: #12121222;
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 10px 15px #12121211;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section .contant {
+    position: relative;
+    padding-left: 20%;
+    padding-top: 10%;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Aladin', cursive;
+}
+
+.section .contant .batteryPercentage {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+}
+
+.section .batteryAnimation {
+    height: 60%;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 1.3;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.section .batteryAnimation i {
+    margin-left: 5px;
+    padding-top: 3px;
+    font-size: 20px;
+}
+
+.section-battery {
+    height: 95%;
+}
+
+.batteryGlass {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    border-radius: 50px;
+    background: #ffffff1a;
+    box-shadow: 0 1px #ffffff0d;
+    border: 1px solid #ffffff07;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.batteryGlass .liquid {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    filter: drop-shadow(0 0 3px);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+
+.batteryGlass .liquid::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border-radius: 50%;
+    top: -5px;
+    filter: drop-shadow(0 0 80px);
+}
